@@ -17,7 +17,7 @@ def won?(board)
     o_won = [board[win[0]], board[win[1]], board[win[2]]].all? do |i|
       i == "O"
     end
-    if x_won || y_won
+    if x_won || o_won
       return win
     end
   end
