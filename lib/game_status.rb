@@ -11,17 +11,13 @@ WIN_COMBINATIONS = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
 
 def won?(board)
   WIN_COMBINATIONS.each do |win|
-    won = [board[win[0]], board[win[1]], board[win[2]]].all? do |i|
+    x_won = [board[win[0]], board[win[1]], board[win[2]]].all? do |i|
       i == "X"
     end
-    if won
-      return win
-    end
-    won = [board[win[0]], board[win[1]], board[win[2]]].all? do |i|
+    o_won = [board[win[0]], board[win[1]], board[win[2]]].all? do |i|
       i == "O"
     end
-    binding.pry
-    if won
+    if x_won || y_won
       return win
     end
   end
